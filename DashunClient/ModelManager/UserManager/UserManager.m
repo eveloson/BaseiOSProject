@@ -61,7 +61,7 @@
 //创建用户的数据库观察者
 - (RBQFetchedResultsController*)createUserFetchedResultsController {
     RBQFetchedResultsController *fetchedResultsController = nil;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userNo = %@",_user.userNo];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userNo = %d",_user.userNo];
     RBQFetchRequest *fetchRequest = [RBQFetchRequest fetchRequestWithEntityName:@"User" inRealm:_rlmRealm predicate:predicate];
     fetchedResultsController = [[RBQFetchedResultsController alloc] initWithFetchRequest:fetchRequest sectionNameKeyPath:nil cacheName:nil];
     [fetchedResultsController performFetch];
